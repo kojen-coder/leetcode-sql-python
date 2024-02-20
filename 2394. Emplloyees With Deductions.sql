@@ -1,6 +1,6 @@
 with temp as(
     select e.employee_id, e.needed_hours, sum(ceil(timestampdiff(minute, in_time, out_time))) as total_hr
-    from employees e, logs l where e.employee_id = l.employee_id
+    from employees e inner join logs l on e.employee_id = l.employee_id
     group by e.employee_id, e.needed_hours
 )
 
