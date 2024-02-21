@@ -1,4 +1,4 @@
-with tmp as (
+With tmp as (
     SELECT team_id, sum(points_change) as points_change
     FROM PointsChange GROUP BY team_id
 )
